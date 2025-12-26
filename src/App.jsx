@@ -17,7 +17,6 @@ function App() {
         <SearchBar onMenuClick={() => setSidebarOpen(true)} />
         <HeroBanner />
         <Section title="Continue Watching" data={moviesData}/>
-        <Section title="Trending" data={moviesData}/>
         <Section title="You Might Like" data={moviesData}/>
       </main>
     </div>
