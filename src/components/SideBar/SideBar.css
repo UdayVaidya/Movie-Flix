@@ -1,0 +1,132 @@
+.side-bar{
+    width: 280px;
+    height: 95vh;
+    background-color: #313131;
+    color: rgb(219, 219, 219);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 2rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.side-bar {
+  width: 280px;
+  min-height: 100vh;
+  background: #313131;
+}
+
+
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+}
+
+
+.menu-items,
+.recent-items {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items li a, .recent-items li a {
+  display: flex;            
+  align-items: center;      
+  justify-content: flex-start;
+  gap: 12px;          
+  font-weight: 800;      
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-items li a:hover, .recent-items li a:hover {
+  border: 1px solid rgb(171, 171, 171);
+}
+
+
+.line{
+    width: 90%;
+    height: 1px;
+    background-color: rgb(117, 117, 117);
+    margin: 10px auto;
+}
+
+
+.bottom{
+  width: 100%;
+}
+
+.bottom button {
+  width: 100%;
+  color: white;
+  border: 1px solid transparent;   
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.bottom button:hover {
+  border-color: rgb(171, 171, 171);
+}
+
+
+@media (max-width: 768px) {
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-bar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,16 @@
+const GenreIcon = (props) => (
+  <svg
+    width="1em"
+    height="1em"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 8 8"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="m4 0l4 2l-4 2l-4-2m0 1l4 2l4-2v1L4 6L0 4m0 1l4 2l4-2v1L4 8L0 6"
+    />
+  </svg>
+);
+
+export default GenreIcon;

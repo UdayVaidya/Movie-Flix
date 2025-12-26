@@ -1,0 +1,118 @@
+/* section container */
+.section {
+  margin-bottom: 32px;
+  max-width: 100%;
+  overflow: hidden; /* VERY IMPORTANT */
+}
+
+
+/* header row */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* see all link */
+.see-all {
+  font-size: 14px;
+  color: #b48cff;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.see-all:hover {
+  opacity: 0.8;
+}
+
+/* movie cards row */
+.card-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+/* hide scrollbar (clean look) */
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+
+.card-row {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.section {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* wrapper for arrows + row */
+.row-wrapper {
+  position: relative;
+}
+
+/* movie row */
+.card-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+}
+
+/* hide scrollbar */
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* arrow buttons */
+.scroll-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  height: 48px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+
+  /* hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* left / right positions */
+.scroll-btn.left {
+  left: 4px;
+}
+
+.scroll-btn.right {
+  right: 4px;
+}
+
+/* show arrows on hover */
+.row-wrapper:hover .scroll-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* hover effect */
+.scroll-btn:hover {
+  background: rgba(119, 119, 119, 0.9);
+}
