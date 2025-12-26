@@ -1,6 +1,6 @@
 .side-bar{
     width: 280px;
-    height: 95vh;
+    height: 97vh;
     background-color: #313131;
     color: rgb(219, 219, 219);
     display: flex;
@@ -26,7 +26,7 @@
 
 .side-bar {
   width: 280px;
-  min-height: 100vh;
+  height: 100vh;
   background: #313131;
 }
 
