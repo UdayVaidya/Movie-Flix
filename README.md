@@ -106,22 +106,6 @@ npm install
 npm run dev
 ```
 
----
-
-## 🚢 Deployment
-
-This project is deployed using **Vercel**.
-
-### Steps:
-1. Push source code to GitHub
-2. Import repository in Vercel
-3. Click **Deploy**
-4. Vercel handles build automatically
-
-_No build files are committed to GitHub._
-
----
-
 ## 🔮 Future Improvements
 
 - Route-based navigation (React Router)
@@ -134,7 +118,7 @@ _No build files are committed to GitHub._
 
 ## 👨‍💻 Author
 
-**Built by:** _Your Name_  
+**Built by:** Uday Vaidya 
 Frontend Developer (React)
 
 ---
