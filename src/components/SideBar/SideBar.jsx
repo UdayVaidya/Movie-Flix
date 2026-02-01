@@ -11,6 +11,7 @@ import DownloadIcon from '../../assets/icons/DownloadIcon'
 import SettingIcon from '../../assets/icons/SettingIcon'
 import LogoutIcon from '../../assets/icons/LogoutIcon'
 import MenuIcon from '../../assets/icons/MenuIcon'
+import CloseWideIcon from '../../assets/icons/CloseWideIcon'
 
 
 const menuItems = [
@@ -62,7 +63,7 @@ const recentItems = [
   },
   {
     id: 4,
-    icon: <DownloadIcon style={{ fontSize: "26px" }}/>,
+    icon: <DownloadIcon style={{ fontSize: "26px" }} />,
     label: "Download",
     link: "#download",
   },
@@ -78,7 +79,7 @@ const SideBar = ({ open, onClose }) => {
 
           {/* Close icon for mobile */}
           <button className="close-btn" onClick={onClose}>
-            <MenuIcon style={{ fontSize: "28px" }} />
+            {open ? <CloseWideIcon style={{ fontSize: "28px" }} /> : <MenuIcon style={{ fontSize: "28px" }} />}
           </button>
         </div>
 

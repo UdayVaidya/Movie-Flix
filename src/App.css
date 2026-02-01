@@ -1,18 +1,22 @@
-
 .app {
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background: #0f0f0f; /* 🔑 important */
+  background: #0f0f0f;
+  /* 🔑 important */
 }
 
 
-/* sidebar */
-.side-bar {
-  width: 260px;
-  height: calc(100% - 32px); /* 🔑 slightly shorter than viewport */
-  margin: 16px;              /* equal top & bottom gap */
-  flex-shrink: 0;
+/* sidebar - desktop only */
+@media (min-width: 769px) {
+  .side-bar {
+    width: 260px;
+    height: calc(100% - 32px);
+    /* 🔑 slightly shorter than viewport */
+    margin: 16px;
+    /* equal top & bottom gap */
+    flex-shrink: 0;
+  }
 }
 
 
@@ -22,8 +26,10 @@
   flex: 1;
   padding: 24px;
   box-sizing: border-box;
-  height: 100vh;        /* 🔑 full viewport height */
-  overflow-y: auto;     /* 🔑 single scrollbar */
+  height: 100vh;
+  /* 🔑 full viewport height */
+  overflow-y: auto;
+  /* 🔑 single scrollbar */
   overflow-x: hidden;
 }
 
@@ -38,17 +44,14 @@
 
 @media (max-width: 768px) {
   .app {
-    flex-direction: column;   /* 🔑 stack instead of side-by-side */
-  }
-
-  .side-bar {
-    width: 40%;
-    height: auto;            /* 🔑 hide sidebar for now */
+    flex-direction: column;
+    /* 🔑 stack instead of side-by-side */
   }
 
   .main-content {
     width: 100%;
     max-width: 100%;
-    padding: 16px;            /* smaller padding for mobile */
+    padding: 16px;
+    /* smaller padding for mobile */
   }
 }

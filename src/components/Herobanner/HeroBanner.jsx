@@ -37,7 +37,7 @@ const HeroBanner = () => {
       setCurrentIndex((prev) =>
         prev === heroSlides.length - 1 ? 0 : prev + 1
       );
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -45,21 +45,27 @@ const HeroBanner = () => {
   const currentSlide = heroSlides[currentIndex];
 
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `url(${currentSlide.bgImage})`,
-      }}
-    >
+    <section className="hero">
+      {/* Background slides with crossfade */}
+      {heroSlides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={`hero-slide ${index === currentIndex ? "active" : ""}`}
+          style={{
+            backgroundImage: `url(${slide.bgImage})`,
+          }}
+        />
+      ))}
+
       <div className="hero-overlay"></div>
 
-      <div className="hero-content">
+      <div className="hero-content" key={currentIndex}>
         <div className="hero-left">
           <span className="badge">🔥 Now Trending</span>
 
           <div className="tags">
             {currentSlide.tags.map((tag, index) => (
-              <span key={index} >{tag}</span>
+              <span key={index}>{tag}</span>
             ))}
           </div>
 

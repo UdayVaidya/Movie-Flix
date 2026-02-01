@@ -3,52 +3,63 @@
   height: 50%;
   border-radius: 20px;
   overflow: hidden;
-  background-image: url("https://picsum.photos/1200/600");
+  margin-bottom: 32px;
+}
+
+/* Individual slide backgrounds */
+.hero-slide {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  margin-bottom: 32px;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
 /* dark overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10, 8, 30, 0.95),
-    rgba(10, 8, 30, 0.4)
-  );
+  background: linear-gradient(to right,
+      rgba(10, 8, 30, 0.95),
+      rgba(10, 8, 30, 0.4));
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   display: flex;
   align-items: center;
   padding: 32px;
 }
 
-.hero {
-  transition: background-image 0.6s ease-in-out;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  filter: brightness(0.6);
-}
-
-
 .hero-left {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;  /* 🔑 THIS fixes it */
+  align-items: flex-start;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .badge {
   display: inline-block;
@@ -59,6 +70,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
+  animation: fadeIn 0.6s ease-out 0.1s both;
 }
 
 .tags {
@@ -67,6 +79,7 @@
   margin-bottom: 12px;
   color: #fff;
   font-size: 20px;
+  animation: fadeIn 0.6s ease-out 0.2s both;
 }
 
 .tags span {
@@ -82,6 +95,7 @@
   font-weight: 800;
   color: #fff;
   margin: 12px 0;
+  animation: fadeIn 0.6s ease-out 0.3s both;
 }
 
 .hero-left p {
@@ -91,6 +105,17 @@
   opacity: 0.85;
   max-width: 90%;
   margin-bottom: 20px;
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .watch-btn {
@@ -102,12 +127,13 @@
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeIn 0.6s ease-out 0.5s both;
 }
 
-.watch-btn:hover{
+.watch-btn:hover {
   background: #8141f8;
-  transform: scale(5px);
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

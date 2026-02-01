@@ -1,27 +1,29 @@
-.side-bar{
-    width: 280px;
-    height: 97vh;
-    background-color: #313131;
-    color: rgb(219, 219, 219);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 2rem;
+.side-bar {
+  width: 280px;
+  height: 97vh;
+  background-color: #313131;
+  color: rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 2rem;
 }
 
 .logo {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 1.5rem;
 }
+
 .logo-text {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-right: 10px; 
+  line-height: 1;
+  margin: 0;
 }
 
 .side-bar {
@@ -30,7 +32,17 @@
   background: #313131;
 }
 
-
+button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  margin-top: 0.1rem;
+}
 
 nav {
   display: flex;
@@ -42,7 +54,7 @@ nav {
 
 .menu-items,
 .recent-items {
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -51,12 +63,13 @@ nav {
   margin: 0;
 }
 
-.menu-items li a, .recent-items li a {
-  display: flex;            
-  align-items: center;      
+.menu-items li a,
+.recent-items li a {
+  display: flex;
+  align-items: center;
   justify-content: flex-start;
-  gap: 12px;          
-  font-weight: 800;      
+  gap: 12px;
+  font-weight: 800;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 1rem;
@@ -64,32 +77,35 @@ nav {
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.menu-items li a:hover, .recent-items li a:hover {
+.menu-items li a:hover,
+.recent-items li a:hover {
   border: 1px solid rgb(171, 171, 171);
 }
 
 
-.line{
-    width: 90%;
-    height: 1px;
-    background-color: rgb(117, 117, 117);
-    margin: 10px auto;
+.line {
+  width: 90%;
+  height: 1px;
+  background-color: rgb(117, 117, 117);
+  margin: 10px auto;
 }
 
 
-.bottom{
+
+.bottom {
   width: 100%;
 }
 
 .bottom button {
   width: 100%;
   color: white;
-  border: 1px solid transparent;   
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 1rem;
   cursor: pointer;
   margin-bottom: 10px;
   transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -105,8 +121,12 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-
+    width: 280px;
+    height: 95vh;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
